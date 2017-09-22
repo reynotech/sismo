@@ -16,6 +16,8 @@ class CreatePhotosTable extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+			$table->integer('punto_mapa_id')->unsigned();
+			$table->foreign('punto_mapa_id')->references('id')->on('puntos_mapas');
         });
     }
 

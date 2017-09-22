@@ -16,6 +16,10 @@ class CreateNotesTable extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+			$table->text('text');
+			$table->integer('punto_mapa_id')->unsigned();
+			$table->foreign('punto_mapa_id')->references('id')->on('puntos_mapas');
+			$table->primary('id');
         });
     }
 

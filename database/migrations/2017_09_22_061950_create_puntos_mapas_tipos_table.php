@@ -16,6 +16,9 @@ class CreatePuntosMapasTiposTable extends Migration
         Schema::create('puntos_mapas_tipos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+			$table->string('nombre')->unique();
+			$table->index('nombre');
+			$table->primary('id');
         });
     }
 

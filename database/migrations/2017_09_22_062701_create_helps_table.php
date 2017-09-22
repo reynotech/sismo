@@ -16,6 +16,10 @@ class CreateHelpsTable extends Migration
         Schema::create('helps', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+			$table->string('email')->nullable();
+			$table->integer('user_id')->unsigned()->default(0);
+			$table->text('descripcion');
+			$table->primary('id');
         });
     }
 

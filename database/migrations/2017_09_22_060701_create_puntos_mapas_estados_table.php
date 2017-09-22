@@ -16,6 +16,8 @@ class CreatePuntosMapasEstadosTable extends Migration
         Schema::create('puntos_mapas_estados', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+			$table->string("name");
+			$table->primary('id');
         });
     }
 

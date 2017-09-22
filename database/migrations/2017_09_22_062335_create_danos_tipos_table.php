@@ -16,6 +16,7 @@ class CreateDanosTiposTable extends Migration
         Schema::create('danos_tipos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+			$table->string('nombre');
         });
     }
 
